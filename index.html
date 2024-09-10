@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch -->
+
+<script>
+    function dropdown() {
+        document.querySelector('#submenu').classList.toggle('hidden');
+        document.querySelector('#arrow').classList.toggle('rotate-0');
+    }
+    dropdown();
+
+    function Open() {
+        document.querySelector('.sidebar').classList.toggle('left-[-300px]');
+    }
+</script>
+
+<body class=" font-[Poppins]">
+    <div class="text-4xl text-white absolute top-5 left-1 md:ml-[300px] cursor-pointer">
+        <i class="bi bi-filter-left px-2 text-black " onclick="Open()"></i>
+
+    </div>
+    <div class="sidebar fixed bottom-0 top-0 md:left-0 p-2 w-[300px] overflow-y-auto text-center  bg-gray-800
+    left-[-300px]">
+        <div class="text-gray-100 text-xl">
+            <div class="p-2.5 mt-1 flex items-center ">
+                <i class="bi bi-app-indicator px-2 py-1 bg-blue-700 rounded-lg"></i>
+                <h1 class="font-bold text-gray-300 ml-6">SideBar</h1>
+                <i class="bi bi-x ml-20 cursor-pointer text-4xl md:hidden" onclick="Open()"></i>
+            </div>
+            <hr class="my-2 text-gray-600 ">
+        </div>
+
+        <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white">
+            <i class="bi bi-search text-sm"></i>
+            <input type="text" placeholder="search" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none">
+        </div>
+
+        <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white hover:bg-slate-400 hover:text-black">
+            <i class="bi bi-house-door-fill text-sm"></i>
+            <span class="text-[15px] ml-4 text-gray-200">Home</span>
+        </div>
+
+        <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white hover:bg-slate-400 hover:text-black">
+            <i class="bi bi-bookmark-fill text-sm"></i>
+            <span class="text-[15px] ml-4 text-gray-200">Bookmark</span>
+        </div>
+
+        <hr class="my-4 text-gray-600 ">
+
+        <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300
+         cursor-pointer bg-gray-700 text-white hover:bg-slate-400 hover:text-black" onclick="dropdown()">
+            <i class="bi bi-chat-left-text-fill text-sm"></i>
+            <div class="flex justify-between w-full items-center">
+                <span class="text-[15px] ml-4 text-gray-200">Chatbox</span>
+                <span class="text-sm rotate-180" id="arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="text-left text-sm font-thin mt-2 w-4/5 mx-auto text-gray-200" id="submenu">
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Social</h1>
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Personal</h1>
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Friends</h1>
+        </div>
+
+        <div
+            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white hover:bg-slate-400 hover:text-black">
+            <i class="bi bi-box-arrow-in-right text-lg"></i>
+            <span class="text-[15px] ml-4 text-gray-200">Logout</span>
+        </div>
+
+    </div>
+    <!-- topbar -->
+    <div class="md:ml-[370px]  pl-8 mt-[12px]">
+
+        <div class=" flex justify-evenly">
+            <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer border border-black ">
+                <i class="bi bi-search text-sm text-black"></i>
+                <input type="text" placeholder="search"
+                    class="text-[15px] ml-4 w-full md:w-[250px] bg-transparent focus:outline-none">
+            </div>
+            <div class="flex space-x-2 md:space-x-6 px-4 mt-4 md:ml-60">
+                <i class="bi bi-bell-fill cursor-pointer hover:text-blue-700 md:text-xl"></i>
+                <i class="bi bi-people-fill cursor-pointer hover:text-blue-700 md:text-xl"></i>
+                <i class="bi bi-facebook cursor-pointer hover:text-blue-700 md:text-xl"></i>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="flex flex-wrap mt-5 space-x-5  space-y-4 justify-center mb-6 ">
+            <div class="p-4 border border-black rounded  bg-blue-600">
+                <div>
+                    <h1 class="text-4xl mb-8  text-white">
+                        Sign Ups
+                    </h1>
+                </div>
+                <div>
+                    <h2 class="flex justify-end text-2xl text-white">114</h2>
+                    <div class="flex justify-between space-x-4">
+
+                        <p><i class="bi bi-person-fill text-xl text-white"></i></p>
+                        <p class="text-xl text-white">+25% <span>from last months</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border border-black rounded  bg-green-600">
+                <div>
+                    <h1 class="text-4xl mb-8  text-white">
+                        Revenue
+                    </h1>
+                </div>
+                <div>
+                    <h2 class="flex justify-end text-2xl text-white">$25,342</h2>
+                    <div class="flex justify-between space-x-4">
+                        <p><i class="bi bi-cart text-xl text-white"></i></p>
+                        <p class="text-xl text-white">+19.23% <span>from last months</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border border-black rounded  bg-red-600">
+                <div>
+                    <h1 class="text-4xl mb-8  text-white">
+                        Open Ticket
+                    </h1>
+                </div>
+                <div>
+                    <h2 class="flex justify-end text-2xl text-white">10</h2>
+                    <div class="flex justify-between space-x-4">
+                        <p><i class="bi bi-telephone-fill text-xl text-white"></i></p>
+                        <p class="text-xl text-white">+25% <span>from last months</span></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr>
+
+        <!-- table -->
+        <div class="mt-4">
+            <div class="flex justify-center mb-4">
+                <h2 class="text-4xl">Recent order</h2>
+            </div>
+
+            <div class="w-full overflow-x-auto">
+                <table class="w-full border-collapse min-w-[600px]">
+                    <thead class="font-bold">
+                        <tr class="border-b border-blacks">
+                            <td class="px-5">Name</td>
+                            <td class="px-5">Price</td>
+                            <td class="px-5">Payment</td>
+                            <td class="px-5">Status</td>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Star Refrigerator</td>
+                            <td class="px-5">$1200</td>
+                            <td class="px-5">Paid</td>
+                            <td class="px-5"><span class="status delivered">Delivered</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Hp Laptop</td>
+                            <td class="px-5">$910</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status pending">Pending</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Apple Watch</td>
+                            <td class="px-5">$780</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status return">Return</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Adidas shoes</td>
+                            <td class="px-5">$520</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status inprogress">In progress</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Star Refrigerator</td>
+                            <td class="px-5">$1200</td>
+                            <td class="px-5">Paid</td>
+                            <td class="px-5"><span class="status delivered">Delivered</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Hp Laptop</td>
+                            <td class="px-5">$910</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status pending">Pending</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Apple Watch</td>
+                            <td class="px-5">$780</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status return">Return</span></td>
+                        </tr>
+            
+                        <tr class="border-b border-blacks hover:bg-blue-500">
+                            <td class="px-5">Adidas shoes</td>
+                            <td class="px-5">$520</td>
+                            <td class="px-5">Due</td>
+                            <td class="px-5"><span class="status inprogress">In progress</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+<!-- lnks for icons -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</html>
